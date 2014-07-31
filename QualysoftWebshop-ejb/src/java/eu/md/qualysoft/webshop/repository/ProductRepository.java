@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  * Product repository for handling Product entities
- * 
+ *
  * @author Zsolt Petrik
  */
 @Stateless

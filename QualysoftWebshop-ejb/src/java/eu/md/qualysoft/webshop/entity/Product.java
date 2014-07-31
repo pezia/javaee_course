@@ -7,12 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
+ * Product entity
  *
- * @author zsolt
+ * @author Zsolt Petrik
  */
 @Entity
 public class Product implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -49,5 +52,5 @@ public class Product implements Serializable {
     public String toString() {
         return "eu.md.qualysoft.webshop.entity.Product[ id=" + id + " ]";
     }
-    
+
 }
