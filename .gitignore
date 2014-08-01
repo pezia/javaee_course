@@ -4,6 +4,9 @@ nbbuild/
 dist/
 nbdist/
 
+QualysoftWebshop-ejb/nbproject/private/
+QualysoftWebshop-war/nbproject/private/
+
 # Class Files #
 *.class
 
