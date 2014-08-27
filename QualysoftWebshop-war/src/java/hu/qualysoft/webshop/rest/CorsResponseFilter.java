@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hu.qualysoft.webshop.rest;
 
 import java.io.IOException;
@@ -16,15 +10,17 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.Provider;
 
 /**
+ * Response filter to add CORS related HTTP headers
  *
- * @author zsolt
+ * @author Zsolt Petrik
  */
 @Provider
 @Priority(Priorities.HEADER_DECORATOR)
 public class CorsResponseFilter implements ContainerResponseFilter {
+
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
-        final MultivaluedMap<String,Object> headers = responseContext.getHeaders();
+        final MultivaluedMap<String, Object> headers = responseContext.getHeaders();
 
         headers.add("Access-Control-Allow-Origin", "*");
         headers.add("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type");
