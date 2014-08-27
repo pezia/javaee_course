@@ -1,6 +1,7 @@
 package eu.md.qualysoft.webshop.repository;
 
 import eu.md.qualysoft.webshop.entity.Product;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,13 +13,18 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ProductRepository implements ProductRepositoryLocal {
-
+    
     @PersistenceContext
     EntityManager em;
-
+    
     @Override
     public Product findById(long id) {
-        return null;
+        return em.find(Product.class, id);
     }
-
+    
+    @Override
+    public List<Product> findAll() {
+        return em.createQuery("SELECT p FROM Product p", Product.class).getResultList();
+    }
+    
 }
